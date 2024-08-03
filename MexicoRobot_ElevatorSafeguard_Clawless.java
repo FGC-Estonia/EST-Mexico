@@ -27,9 +27,9 @@ import com.qualcomm.robotcore.hardware.DigitalChannel.Mode;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Linear OpMode", group="Linear Opmode")
+@TeleOp(name="Mexico_ElevatorSafeguard_Clawless")
 
-public class MexicoRobotVer2 extends LinearOpMode {
+public class MexicoRobot_ElevatorSafeguard_Clawless extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -87,7 +87,7 @@ public class MexicoRobotVer2 extends LinearOpMode {
             sw.setPower(-xpower + turn);
             nw.setPower(ypower + turn);
             se.setPower(-ypower + turn);
-            if(gamepad1.left_bumper){
+            if(gamepad1.left_bumper && !isSwitchActive){
                 lift1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
                 lift2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
                 lift1.setPower(1);
